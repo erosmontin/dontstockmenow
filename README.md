@@ -1,5 +1,5 @@
-# Caravel
-base settings for laravel roject
+# Dontstockmenow
+We watch stocks
 
 ## Requirements
 - git
@@ -11,8 +11,8 @@ https://www.youtube.com/watch?v=ImtZ5yENzgE&amp;index=6&amp;t=0s
 
 ## Installation
 ```
-- git clone https://github.com/erosmontin/caravel.git
-- cd cloudmrhub
+- git clone https://github.com/erosmontin/dontstockmenow.git
+- cd dontstockmenow
 - composer install 
 ```
 -  rename .env.example as .env and edit(see https://laravel.com/docs/7.x/database)
@@ -23,8 +23,8 @@ https://www.youtube.com/watch?v=ImtZ5yENzgE&amp;index=6&amp;t=0s
       ```
         - open the file on a text editor and:
             - DB_CONNECTION=sqlite
-            - DB_DATABASE=/absolute/path/to/database.sqlite
-            - DB_FOREIGN_KEYS=true
+                - DB_DATABASE=/absolute/path/to/database.sqlite
+                - DB_FOREIGN_KEYS=true
  ```
 - php artisan key:generate
 - php artisan migrate:fresh --seed

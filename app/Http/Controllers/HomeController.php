@@ -25,9 +25,11 @@ class HomeController extends Controller
     public function index()
     {
         $user=auth()->user();
+        $stocks=[];
+        $stocks=auth()->user()->watching()->paginate(3);
 
-        // $cloudapps=auth()->user()->utilizing()->paginate(8);
-        return view('home',compact('user'));
+//        $stocks=[];
+        return view('home',compact('user','stocks'));
     }
 
 

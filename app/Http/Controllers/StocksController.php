@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Cloudapp;
+use App\Stock;
 use App\User;
 use Illuminate\Http\Request;
 
-class CloudappsController extends Controller
+class StocksController extends Controller
 {
+
     //
 
     /**
@@ -17,9 +18,9 @@ class CloudappsController extends Controller
      */
     public function index()
     {
-        $cloudapps = Cloudapp::paginate(8);
+        $stocks = Stock::paginate(3);
 
-        return view('cloudapp.index',compact('cloudapps'));
+        return view('stock.index', compact('stocks'));
     }
 
     /**
@@ -43,7 +44,7 @@ class CloudappsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function show($id)
@@ -54,7 +55,7 @@ class CloudappsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function edit($id)
@@ -65,7 +66,7 @@ class CloudappsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function update($id)
@@ -76,7 +77,7 @@ class CloudappsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function destroy($id)
@@ -84,17 +85,4 @@ class CloudappsController extends Controller
         //
     }
 
-
-    /**
-     * Start the app for the user
-     *
-     * @param  int $cloudapp
-     * @return view
-     */
-    public function startup(Cloudapp $cloudapp)
-    {
-        $user=auth()->user();
-        $url=$cloudapp->startlink . "{\"UID\":212,\"name\":\"{$user->name}\",\"surname\":\"$user->lastname\",\"admin\":false,\"logged\":true,\"email\":\"$user->email\",\"subdetails\":\"Columbia College (SC)\"}";
-        return view('external.work',compact('url'));
-    }
 }

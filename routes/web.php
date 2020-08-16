@@ -34,4 +34,5 @@ Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edi
 Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');
 
 
-Route::get('/external/{cloudapp}', 'CloudappsController@startup')->name('external');
+Route::get('/stocks', 'StocksController@index')->name('stocks');
+Route::post('/stocks/{stock}','StocksController@store');

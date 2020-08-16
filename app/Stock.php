@@ -4,10 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cloudapp extends Model
+class Stock extends Model
 {
+//    protected $fillable = [
+//        'ticker'
+//    ];
     //
-    public function utilizers(){
+    public function watchers(){
         return $this->belongsToMany(User::class);
     }
 }
